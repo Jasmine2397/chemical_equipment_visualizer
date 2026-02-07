@@ -145,10 +145,10 @@ Expected columns:
 ## 🖼️ Screenshots
 
 Web Application – Dashboard  
-screenshots/web_dashboard.png
+![Web Dashboard](screenshots/web_dashboard.png)
 
 Desktop Application – Interface  
-screenshots/desktop_app.png
+![Desktop Application](screenshots/desktop_app.png)
 
 ---
 
