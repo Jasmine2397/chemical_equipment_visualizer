@@ -1,103 +1,83 @@
-# Chemical Equipment Parameter Visualizer  
-### Hybrid Web + Desktop Application
+# Chemical Equipment Parameter Visualizer
+## Hybrid Web + Desktop Application
 
 ---
 
 ## 📌 Project Overview
 
-The **Chemical Equipment Parameter Visualizer** is a hybrid software system designed to analyze, summarize, and visualize operational parameters of chemical equipment using a **single unified backend**.
+The **Chemical Equipment Parameter Visualizer** is a hybrid application designed to analyze and visualize operational parameters of chemical equipment using a unified backend architecture.
 
-The application supports both **Web** and **Desktop** clients, ensuring consistent analytics, visualization, and data processing across platforms.
+The system supports both **Web** and **Desktop** clients, enabling consistent data processing, analytics, and visualization across platforms.
 
-Users upload CSV datasets containing equipment parameters such as **flowrate, pressure, and temperature**. The backend processes this data and exposes analytics through REST APIs consumed by both frontends.
+Users can upload CSV datasets containing chemical equipment parameters such as **flowrate, pressure, and temperature**. The backend processes the data, generates analytical summaries, and exposes results through REST APIs consumed by both frontends.
 
 ---
 
 ## 🏗️ System Architecture
 
-CSV Dataset
-│
-▼
-Django REST API (Backend)
-│
-├── React Web Application (Charts + Tables)
-│
-└── PyQt5 Desktop Application (Charts + Tables)
-
-markdown
-Copy code
-
-### Architecture Highlights
-- Single backend system
-- Multiple frontends (Web + Desktop)
-- Centralized analytics logic
-- Consistent visualization across platforms
+CSV Dataset  
+→ Django REST API (Backend)  
+→ React Web Application (Charts + Tables)  
+→ PyQt5 Desktop Application (Charts + Tables)
 
 ---
 
 ## ✨ Key Features
 
-- CSV file upload via **Web** and **Desktop** applications
-- Automated data analysis using **Pandas**
-- Summary statistics generation:
+- CSV file upload via Web and Desktop applications
+- Automated data analysis using Pandas
+- Summary statistics:
   - Total equipment count
   - Average flowrate, pressure, and temperature
   - Equipment type distribution
-- Interactive data visualization:
-  - **Web**: Chart.js
-  - **Desktop**: Matplotlib
+- Interactive data visualization
+  - Web: Chart.js
+  - Desktop: Matplotlib
 - Dataset history management (last 5 uploads)
-- Secure REST APIs using **Basic Authentication**
+- Secure REST APIs using Basic Authentication
 
 ---
 
 ## 🛠️ Tech Stack
 
 ### Backend
-- Python  
-- Django  
-- Django REST Framework  
-- Pandas  
-- SQLite  
+- Python
+- Django
+- Django REST Framework
+- Pandas
+- SQLite
 
 ### Web Frontend
-- React.js  
-- Axios  
-- Chart.js  
+- React.js
+- Axios
+- Chart.js
 
 ### Desktop Frontend
-- PyQt5  
-- Matplotlib  
-- Requests  
+- PyQt5
+- Matplotlib
+- Requests
 
 ### Other Tools
-- Git & GitHub  
+- Git & GitHub
 
 ---
 
 ## 📁 Project Structure
 
 chemical-equipment-visualizer/
-│
 ├── backend/
-│ └── server/
-│ ├── equipment/
-│ ├── server/
-│ └── manage.py
-│
+│   └── server/
+│       ├── equipment/
+│       ├── server/
+│       └── manage.py
 ├── web-frontend/
-│ └── equipment-web/
-│
+│   └── equipment-web/
 ├── desktop-frontend/
-│ └── app.py
-│
+│   └── app.py
 ├── sample_equipment_data.csv
 ├── screenshots/
 ├── README.md
 └── .gitignore
-
-yaml
-Copy code
 
 ---
 
@@ -105,98 +85,83 @@ Copy code
 
 ### 1️⃣ Backend Setup
 
-```bash
-cd backend
-python -m venv venv
-venv\Scripts\activate
-pip install django djangorestframework pandas django-cors-headers
-cd server
-python manage.py migrate
-python manage.py createsuperuser
-python manage.py runserver
-Backend URL:
+cd backend  
+python -m venv venv  
+venv\Scripts\activate  
+pip install django djangorestframework pandas django-cors-headers  
+cd server  
+python manage.py migrate  
+python manage.py createsuperuser  
+python manage.py runserver  
 
-cpp
-Copy code
+Backend URL:  
 http://127.0.0.1:8000
-2️⃣ Web Frontend Setup
-bash
-Copy code
-cd web-frontend/equipment-web
-npm install
-npm start
-Web Application URL:
 
-arduino
-Copy code
+---
+
+### 2️⃣ Web Frontend Setup
+
+cd web-frontend/equipment-web  
+npm install  
+npm start  
+
+Web Application URL:  
 http://localhost:3000
-3️⃣ Desktop Application Setup
-bash
-Copy code
-cd desktop-frontend
-python -m venv venv
-venv\Scripts\activate
-pip install pyqt5 matplotlib pandas requests
-python app.py
-🔌 API Endpoints
-Method	Endpoint	Description
-POST	/api/upload/	Upload CSV and generate analytics
-GET	/api/history/	Retrieve last 5 dataset summaries
 
-All endpoints are protected using Basic Authentication.
+---
 
-📄 Sample Dataset
-A sample CSV file sample_equipment_data.csv is included for testing.
+### 3️⃣ Desktop Application Setup
 
-Expected Columns
-Equipment Name
+cd desktop-frontend  
+python -m venv venv  
+venv\Scripts\activate  
+pip install pyqt5 matplotlib pandas requests  
+python app.py  
 
-Type
+---
 
-Flowrate
+## 🔌 API Endpoints
 
-Pressure
+Method | Endpoint        | Description
+------ | --------------- | ------------------------------
+POST   | /api/upload/    | Upload CSV and generate analytics
+GET    | /api/history/   | Retrieve last 5 dataset summaries
 
-Temperature
+---
 
-🎯 Learning Outcomes
-Hybrid application architecture design
+## 📄 Sample Dataset
 
-REST API development using Django
+A sample CSV file **sample_equipment_data.csv** is provided for testing.
 
-Frontend–backend integration
+Expected columns:
+- Equipment Name
+- Type
+- Flowrate
+- Pressure
+- Temperature
 
-Data analytics with Pandas
+---
 
-Cross-platform data visualization
+## 🖼️ Screenshots
 
-Secure API authentication
+Web Application – Dashboard  
+screenshots/web_dashboard.png
 
-🖼️ Screenshots
-Web Application – Dashboard
+Desktop Application – Interface  
+screenshots/desktop_app.png
 
-CSV upload interface
+---
 
-Summary statistics displayed using cards
+## 🎯 Learning Outcomes
 
-Interactive charts for equipment parameters
+- Hybrid application architecture
+- REST API development
+- Frontend–backend integration
+- Data analytics using Pandas
+- Cross-platform visualization
 
-![Web Dashboard](screenshots/web_dashboard.png)
+---
 
-Desktop Application – PyQt5 Interface
+## 📜 License
 
-CSV upload through desktop client
-
-Tabular equipment data view
-
-Equipment type distribution visualization
-
-![Desktop Application](screenshots/desktop_app.png)
-
-📌 Notes
-
-This project uses a single backend serving both Web and Desktop clients
-
-Analytics logic is centralized to ensure consistency
-
-Designed for academic evaluation and system design demonstration
+This project is intended for academic and educational use.
