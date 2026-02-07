@@ -174,6 +174,7 @@ Secure API authentication
 
 🖼️ Screenshots
 Web Application – Dashboard
+
 CSV upload interface
 
 Summary statistics displayed using cards
@@ -182,21 +183,13 @@ Interactive charts for equipment parameters
 
 ![Web Dashboard](screenshots/web_dashboard.png)
 
-Web Application – Dataset History
-
-Displays the last five uploaded datasets
-
-Shows upload timestamp and total equipment count
-
-![Web History](screenshots/web_history.png)
-
 Desktop Application – PyQt5 Interface
 
-CSV upload via desktop client
+CSV upload through desktop client
 
-Tabular data display
+Tabular equipment data view
 
-Equipment type distribution visualized using Matplotlib
+Equipment type distribution visualization
 
 ![Desktop Application](screenshots/desktop_app.png)
 
