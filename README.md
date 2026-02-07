@@ -1,157 +1,154 @@
-Chemical Equipment Parameter Visualizer
+# Chemical Equipment Parameter Visualizer  
+### Hybrid Web + Desktop Application
 
-Hybrid Web + Desktop Application
+---
 
-Project Overview
+## 📌 Project Overview
 
-The Chemical Equipment Parameter Visualizer is a hybrid application designed to analyze and visualize operational parameters of chemical equipment using a unified backend architecture. The system supports both Web and Desktop clients, enabling consistent data processing, analytics, and visualization across platforms.
+The **Chemical Equipment Parameter Visualizer** is a hybrid software system designed to analyze, summarize, and visualize operational parameters of chemical equipment using a **single unified backend**.
 
-Users can upload CSV datasets containing chemical equipment parameters such as flowrate, pressure, and temperature. The backend processes the data, generates analytical summaries, and exposes the results through REST APIs consumed by both frontends.
+The application supports both **Web** and **Desktop** clients, ensuring consistent analytics, visualization, and data processing across platforms.
 
-System Architecture
+Users upload CSV datasets containing equipment parameters such as **flowrate, pressure, and temperature**. The backend processes this data and exposes analytics through REST APIs consumed by both frontends.
+
+---
+
+## 🏗️ System Architecture
+
 CSV Dataset
-     │
-     ▼
+│
+▼
 Django REST API (Backend)
-     │
-     ├── React Web Application (Charts + Tables)
-     │
-     └── PyQt5 Desktop Application (Charts + Tables)
+│
+├── React Web Application (Charts + Tables)
+│
+└── PyQt5 Desktop Application (Charts + Tables)
 
+markdown
+Copy code
 
-Single backend
+### Architecture Highlights
+- Single backend system
+- Multiple frontends (Web + Desktop)
+- Centralized analytics logic
+- Consistent visualization across platforms
 
-Multiple frontends
+---
 
-Consistent analytics and visualization
+## ✨ Key Features
 
-Key Features
+- CSV file upload via **Web** and **Desktop** applications
+- Automated data analysis using **Pandas**
+- Summary statistics generation:
+  - Total equipment count
+  - Average flowrate, pressure, and temperature
+  - Equipment type distribution
+- Interactive data visualization:
+  - **Web**: Chart.js
+  - **Desktop**: Matplotlib
+- Dataset history management (last 5 uploads)
+- Secure REST APIs using **Basic Authentication**
 
-CSV file upload via Web and Desktop applications
+---
 
-Automated data analysis using Pandas
+## 🛠️ Tech Stack
 
-Summary statistics:
+### Backend
+- Python  
+- Django  
+- Django REST Framework  
+- Pandas  
+- SQLite  
 
-Total equipment count
+### Web Frontend
+- React.js  
+- Axios  
+- Chart.js  
 
-Average flowrate, pressure, and temperature
+### Desktop Frontend
+- PyQt5  
+- Matplotlib  
+- Requests  
 
-Equipment type distribution
+### Other Tools
+- Git & GitHub  
 
-Interactive data visualization:
+---
 
-Web: Chart.js
+## 📁 Project Structure
 
-Desktop: Matplotlib
-
-Dataset history management (last 5 uploads stored)
-
-PDF report generation
-
-Basic authentication for secured API access
-
-Tech Stack
-Backend
-
-Python
-
-Django
-
-Django REST Framework
-
-Pandas
-
-SQLite
-
-Web Frontend
-
-React.js
-
-Axios
-
-Chart.js
-
-Desktop Frontend
-
-PyQt5
-
-Matplotlib
-
-Requests
-
-Other Tools
-
-Git & GitHub
-
-ReportLab (PDF generation)
-
-Project Structure
 chemical-equipment-visualizer/
 │
 ├── backend/
-│   └── server/
-│       ├── equipment/
-│       ├── server/
-│       └── manage.py
+│ └── server/
+│ ├── equipment/
+│ ├── server/
+│ └── manage.py
 │
 ├── web-frontend/
-│   └── equipment-web/
+│ └── equipment-web/
 │
 ├── desktop-frontend/
-│   └── app.py
+│ └── app.py
 │
 ├── sample_equipment_data.csv
+├── screenshots/
 ├── README.md
-├── .gitignore
+└── .gitignore
 
-Setup Instructions
-1. Backend Setup
+yaml
+Copy code
+
+---
+
+## ⚙️ Setup Instructions
+
+### 1️⃣ Backend Setup
+
+```bash
 cd backend
 python -m venv venv
 venv\Scripts\activate
-pip install django djangorestframework pandas reportlab django-cors-headers
+pip install django djangorestframework pandas django-cors-headers
 cd server
 python manage.py migrate
 python manage.py createsuperuser
 python manage.py runserver
+Backend URL:
 
-
-Backend runs at:
-
+cpp
+Copy code
 http://127.0.0.1:8000
-
-2. Web Frontend Setup
+2️⃣ Web Frontend Setup
+bash
+Copy code
 cd web-frontend/equipment-web
 npm install
 npm start
+Web Application URL:
 
-
-Web app runs at:
-
+arduino
+Copy code
 http://localhost:3000
-
-3. Desktop Application Setup
+3️⃣ Desktop Application Setup
+bash
+Copy code
 cd desktop-frontend
 python -m venv venv
 venv\Scripts\activate
 pip install pyqt5 matplotlib pandas requests
 python app.py
-
-API Endpoints
+🔌 API Endpoints
 Method	Endpoint	Description
 POST	/api/upload/	Upload CSV and generate analytics
 GET	/api/history/	Retrieve last 5 dataset summaries
-GET	/api/report/	Download PDF report
 
 All endpoints are protected using Basic Authentication.
 
-Sample Dataset
+📄 Sample Dataset
+A sample CSV file sample_equipment_data.csv is included for testing.
 
-A sample CSV file sample_equipment_data.csv is provided for testing and demonstration purposes.
-
-Expected columns:
-
+Expected Columns
 Equipment Name
 
 Type
@@ -162,29 +159,26 @@ Pressure
 
 Temperature
 
+🎯 Learning Outcomes
+Hybrid application architecture design
 
-Learning Outcomes
+REST API development using Django
 
-Hybrid application architecture
+Frontend–backend integration
 
-REST API development
+Data analytics with Pandas
 
-Frontend-backend integration
+Cross-platform data visualization
 
-Data analytics using Pandas
+Secure API authentication
 
-Data visualization across platforms
-
-Secure API access
-
-Screenshots
-Web Application – CSV Upload & Dashboard
-
-CSV file upload interface
+🖼️ Screenshots
+Web Application – Dashboard
+CSV upload interface
 
 Summary statistics displayed using cards
 
-Interactive data visualization for equipment parameters
+Interactive charts for equipment parameters
 
 ![Web Dashboard](screenshots/web_dashboard.png)
 
@@ -206,10 +200,10 @@ Equipment type distribution visualized using Matplotlib
 
 ![Desktop Application](screenshots/desktop_app.png)
 
-PDF Report Generation
+📌 Notes
 
-Automatically generated summary report
+This project uses a single backend serving both Web and Desktop clients
 
-Includes dataset statistics and timestamp
+Analytics logic is centralized to ensure consistency
 
-![PDF Report](screenshots/pdf_report.png)
+Designed for academic evaluation and system design demonstration
