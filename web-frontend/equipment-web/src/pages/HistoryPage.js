@@ -9,13 +9,16 @@ function HistoryPage() {
   }, []);
 
   return (
-    <ul>
-      {history.map((item, i) => (
-        <li key={i}>
-          {item.uploaded_at} - {item.total_count}
-        </li>
-      ))}
-    </ul>
+    <div className="card">
+      <h3>Upload History (Last 5)</h3>
+      <ul>
+        {history.map((item, i) => (
+          <li key={i}>
+            {new Date(item.uploaded_at).toLocaleString()} — Total: {item.total_count}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
